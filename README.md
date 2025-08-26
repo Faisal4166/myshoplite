@@ -39,7 +39,7 @@ If a user adds a product to favorites, it will appear in the Favorites tab (icon
 
 ```bash
 # Clone repository
-git clone <your-repo-url>
+git clone https://github.com/Faisal4166/myshoplite
 cd myshoplite
 
 # Install dependencies

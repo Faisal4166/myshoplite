@@ -22,7 +22,10 @@ Decrease the quantity by tapping the "-" button.
 Remove a single item by clicking the trash icon (in red).
 Clear the entire cart by clicking the "Clear Cart" button.
 When a user clicks on a product, they are taken to the Product Details Page, which shows the product image, title, price, description, and a Favorite toggle button.
+
 If a user adds a product to favorites, it will appear in the Favorites tab (icon: heart, text: "Favorite"). Users can remove products from favorites by navigating to the product detail page and toggling the "Remove from Favorite" button. Multiple products can be added to the favorites list.
+
+How to Setup follow these instructions  
 ---
 
 ## 🚀 Getting Started

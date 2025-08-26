@@ -1,0 +1,126 @@
+import { COLORS } from "@utils/colors";
+import { StyleSheet, Platform } from "react-native";
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: COLORS.background,
+    marginTop: Platform.OS === "android" ? 40 : 1,
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  card: {
+    flex: 1,
+    minWidth: 0,
+    backgroundColor: COLORS.white,
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 12,
+    shadowColor: COLORS.black,
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 5,
+    elevation: 3,
+    marginHorizontal: Platform.OS === "web" ? 5 : 0,
+  },
+  price: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginVertical: 8,
+    color: COLORS.primary,
+  },
+  quantityContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  qtyButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    borderRadius: 6,
+  },
+  qtyText: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  qtyValue: {
+    marginHorizontal: 12,
+    fontSize: 16,
+    color: COLORS.black,
+  },
+  footer: {
+    width: "100%",
+    padding: 16,
+    backgroundColor: COLORS.white,
+    borderTopWidth: 1,
+    borderColor: COLORS.gray,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+  total: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 8,
+    color: COLORS.black,
+  },
+  clearButton: {
+    backgroundColor: COLORS.danger,
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    alignItems: "center",
+    minWidth: 120,
+    flexDirection: "row",
+  },
+  spaceRight: { marginRight: 8 },
+  clearText: {
+    color: COLORS.white,
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+  empty: {
+    color: COLORS.disabledText,
+    fontSize: 16,
+    fontWeight: "500",
+  },
+  cardContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  itemInfo: {
+    flex: 1,
+    paddingRight: 12,
+  },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 8,
+  },
+  name: {
+    flex: 1,
+    fontSize: 16,
+    fontWeight: "600",
+    marginRight: 8,
+  },
+  remove: {
+    fontSize: 20,
+    color: COLORS.danger,
+    marginLeft: 20,
+    borderColor: COLORS.danger,
+  },
+  itemImage: {
+    width: 80,
+    height: 80,
+    borderRadius: 8,
+    backgroundColor: COLORS.background,
+  },
+});

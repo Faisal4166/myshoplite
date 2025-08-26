@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1756237686533" clover="3.2.0">
+  <project timestamp="1756237686533" name="All files">
+    <metrics statements="64" coveredstatements="52" conditionals="37" coveredconditionals="29" methods="31" coveredmethods="27" elements="132" coveredelements="108" complexity="0" loc="64" ncloc="64" packages="7" files="11" classes="11"/>
+    <package name="components.CategoryFilter">
+      <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
+      <file name="CategoryFilter.tsx" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/components/CategoryFilter/CategoryFilter.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="24" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/components/CategoryFilter/styles.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ProductCard">
+      <metrics statements="6" coveredstatements="6" conditionals="13" coveredconditionals="12" methods="4" coveredmethods="4"/>
+      <file name="ProductCard.tsx" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/components/ProductCard/ProductCard.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="13" coveredconditionals="12" methods="4" coveredmethods="4"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="58" count="1" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="styles.ts" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/components/ProductCard/styles.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="redux">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="hooks.ts" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/redux/hooks.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="redux.slice">
+      <metrics statements="36" coveredstatements="36" conditionals="12" coveredconditionals="9" methods="19" coveredmethods="19"/>
+      <file name="cartSlice.ts" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/redux/slice/cartSlice.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="7"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+      </file>
+      <file name="favoritesSlice.ts" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/redux/slice/favoritesSlice.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+      </file>
+      <file name="productsSlice.ts" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/redux/slice/productsSlice.ts">
+        <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="6"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="51" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="11" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="api.ts" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/services/api.ts">
+        <metrics statements="11" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="services.config">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="url.ts" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/services/config/url.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="colors.ts" path="/Users/apple/Documents/E/Personal/Working/ECS/myshoplite/src/utils/colors.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

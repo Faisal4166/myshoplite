@@ -1,0 +1,3 @@
+module.exports = {
+  BASE_URL: "https://mocki.io/v1/c53fb45e-5085-487a-afac-0295f62fb86e",
+};

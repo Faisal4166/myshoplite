@@ -68,42 +68,36 @@ yarn web
 
 # Test Case Run
 npx jest
+ PASS  src/services/__test__/api.test.ts
+ PASS  src/components/__test__/ProductCard.test.tsx
+ PASS  src/components/__test__/CategoryFilter.test.tsx
+ PASS  src/redux/__tests__/productsSlice.test.ts
+ PASS  src/redux/__tests__/cartSlice.test.ts
+ PASS  src/redux/__tests__/favoritesSlice.test.ts
 
-#you will see all pass tests
-PASS  src/components/ProductCard/__tests__/ProductCard.test.tsx
-PASS  src/components/CategoryFilter/__test__/CategoryFilter.test.tsx
-PASS  src/redux/__tests__/productsSlice.test.ts
-PASS  src/redux/__tests__/favoritesSlice.test.ts
-PASS  src/redux/__tests__/cartSlice.test.ts
-
-Test Suites: 5 passed, 5 total
-Tests:       27 passed, 27 total
-
+Test Suites: 6 passed, 6 total
+Tests:       32 passed, 32 total
+Snapshots:   0 total
+Time:        1.561 s
+Ran all test suites.
 
 # run this command for test case coverage.
-
 npx jest --coverage
-
-# Report of coverage.
-# watchman warning:  Recrawled this watch 9 times, most recently because:
-# MustScanSubDirs UserDroppedTo resolve, please review the information on
-# https://facebook.github.io/watchman/docs/troubleshooting.html#recrawl
-# To clear this warning, run:
-
- PASS  src/components/ProductCard/__tests__/ProductCard.test.tsx
- PASS  src/components/CategoryFilter/__test__/CategoryFilter.test.tsx
+ PASS  src/services/__test__/api.test.ts
+ PASS  src/components/__test__/ProductCard.test.tsx
+ PASS  src/components/__test__/CategoryFilter.test.tsx
  PASS  src/redux/__tests__/productsSlice.test.ts
- PASS  src/redux/__tests__/favoritesSlice.test.ts
  PASS  src/redux/__tests__/cartSlice.test.ts
+ PASS  src/redux/__tests__/favoritesSlice.test.ts
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
-All files          |   82.66 |    78.37 |   87.09 |   81.25 |                   
+All files          |   95.78 |    72.22 |   97.22 |   95.06 |                   
  ...CategoryFilter |     100 |      100 |     100 |     100 |                   
-  ...oryFilter.tsx |     100 |      100 |     100 |     100 |                   
+  index.tsx        |     100 |      100 |     100 |     100 |                   
   styles.ts        |     100 |      100 |     100 |     100 |                   
  ...ts/ProductCard |     100 |     92.3 |     100 |     100 |                   
-  ProductCard.tsx  |     100 |     92.3 |     100 |     100 | 26                
+  index.tsx        |     100 |     92.3 |     100 |     100 | 27                
   styles.ts        |     100 |      100 |     100 |     100 |                   
  redux             |     100 |      100 |     100 |     100 |                   
   hooks.ts         |     100 |      100 |     100 |     100 |                   
@@ -111,19 +105,22 @@ All files          |   82.66 |    78.37 |   87.09 |   81.25 |
   cartSlice.ts     |     100 |       75 |     100 |     100 | 36                
   ...ritesSlice.ts |     100 |      100 |     100 |     100 |                   
   productsSlice.ts |     100 |       50 |     100 |     100 | 22-46             
- services          |       0 |        0 |       0 |       0 |                   
-  api.ts           |       0 |        0 |       0 |       0 | 6-27              
- services/config   |       0 |      100 |     100 |       0 |                   
-  url.ts           |       0 |      100 |     100 |       0 | 3                 
- utils             |     100 |      100 |     100 |     100 |                   
+ services          |   91.66 |       50 |     100 |    90.9 |                   
+  api.ts           |     100 |       50 |     100 |     100 | 10-22             
+  index.ts         |       0 |      100 |     100 |       0 | 3                 
+ utils             |   86.36 |    47.05 |   83.33 |   84.21 |                   
   colors.ts        |     100 |      100 |     100 |     100 |                   
+  dimensions.ts    |      85 |    46.66 |   83.33 |   82.35 | 22-24             
+  globalStyles.ts  |     100 |       50 |     100 |     100 | 22                
 -------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 5 passed, 5 total
-Tests:       27 passed, 27 total
+Test Suites: 6 passed, 6 total
+Tests:       32 passed, 32 total
 Snapshots:   0 total
-Time:        1.303 s
+Time:        1.216 s
 Ran all test suites.
+
+95–96% coverage overall.
 
 
 ```

@@ -1,10 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { TabsParamList } from "@types";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { COLORS } from "@utils/colors";
-import ProductList from "@screens/ProductListing/ProductList";
-import Favorites from "@screens/Favorites/Favorites";
-import CartScreen from "@screens/Cart/CartScreen";
+import ProductList from "@screens/ProductListing";
+import Favorites from "@screens/Favorites";
+import CartScreen from "@screens/Cart";
+import { TabsParamList } from "types/navigation/bottomTab";
+import { Screens } from "types/navigation/rootStack";
 
 const Tab = createBottomTabNavigator<TabsParamList>();
 
@@ -30,9 +31,9 @@ export default function TabsNavigator() {
         tabBarInactiveTintColor: COLORS.gray,
       })}
     >
-      <Tab.Screen name="Home" component={ProductList} />
-      <Tab.Screen name="Favorites" component={Favorites} />
-      <Tab.Screen name="Cart" component={CartScreen} />
+      <Tab.Screen name={Screens.Home} component={ProductList} />
+      <Tab.Screen name={Screens.Favorites} component={Favorites} />
+      <Tab.Screen name={Screens.Cart} component={CartScreen} />
     </Tab.Navigator>
   );
 }

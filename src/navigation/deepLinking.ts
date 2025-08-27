@@ -1,20 +1,17 @@
 import { LinkingOptions } from "@react-navigation/native";
-import { RootStackParamList } from "@types";
+import { RootStackParamList, Screens } from "types/navigation/rootStack";
+import { DEEPLINK_PREFIX_1, DEEPLINK_PREFIX_2, DEEPLINK_PREFIX_3 } from "@env";
 
 export const linking: LinkingOptions<RootStackParamList> = {
-  prefixes: [
-    "myshoplite://",
-    "https://myshoplite.app",
-    "http://192.168.1.6:8081",
-  ],
+  prefixes: [DEEPLINK_PREFIX_1, DEEPLINK_PREFIX_2, DEEPLINK_PREFIX_3],
   config: {
     screens: {
       ProductDetails: "product/:id",
       Tabs: {
         screens: {
-          Home: "home",
-          Favorites: "favorites",
-          Cart: "cart",
+          Home: Screens.Home,
+          Favorites: Screens.Favorites,
+          Cart: Screens.Cart,
         },
       },
     },

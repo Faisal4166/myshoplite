@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, Image, Pressable, TouchableOpacity } from "react-native";
-import { Product } from "../../types";
+import { Product } from "../../types/screens/product";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { addToCart } from "../../redux/slice/cartSlice";
 import { styles } from "./styles";
+import { globalStyles } from "@utils/globalStyles";
 
 type Props = {
   product: Product;
@@ -37,7 +38,7 @@ export default function ProductCard({
       />
       <View style={styles.info}>
         <Text
-          style={styles.name}
+          style={globalStyles.title}
           numberOfLines={1}
           accessible
           accessibilityLabel={`Product name: ${product.name}`}
@@ -45,7 +46,7 @@ export default function ProductCard({
           {product.name}
         </Text>
         <Text
-          style={styles.price}
+          style={globalStyles.price}
           accessible
           accessibilityLabel={`Product price: $${product.price}`}
         >
@@ -54,13 +55,18 @@ export default function ProductCard({
       </View>
 
       <TouchableOpacity
-        style={[styles.addButton, isAdded && styles.addedButton]}
+        style={[globalStyles.addButton, isAdded && globalStyles.addedButton]}
         onPress={() => !isAdded && dispatch(addToCart(product))}
         disabled={isAdded}
         accessible
         accessibilityLabel={isAdded ? "Added to cart" : "Add to cart"}
       >
-        <Text style={[styles.addButtonText, isAdded && styles.addedButtonText]}>
+        <Text
+          style={[
+            globalStyles.buttonText,
+            isAdded && globalStyles.buttonText,
+          ]}
+        >
           {isAdded ? "Added" : "Add to Cart"}
         </Text>
       </TouchableOpacity>

@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { COLORS } from "@utils/colors";
+import { hp, wp } from "@utils/dimensions";
 
 export const styles = StyleSheet.create({
   container: {
@@ -7,54 +8,19 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 350,
+    height: hp(40),
     backgroundColor: COLORS.lightGray,
   },
   info: {
-    padding: 20,
+    padding: wp(5),
     backgroundColor: COLORS.white,
-    marginTop: -30,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    marginTop: -hp(4),
+    borderTopLeftRadius: wp(5),
+    borderTopRightRadius: wp(5),
     shadowColor: COLORS.black,
-    shadowOffset: { width: 0, height: 5 },
+    shadowOffset: { width: 0, height: hp(0.6) },
     shadowOpacity: 0.1,
-    shadowRadius: 10,
+    shadowRadius: wp(2.5),
     elevation: 5,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: COLORS.black,
-    marginBottom: 10,
-  },
-  price: {
-    fontSize: 22,
-    color: COLORS.primary,
-    fontWeight: "700",
-    marginBottom: 12,
-  },
-  description: {
-    fontSize: 16,
-    color: COLORS.black,
-    marginBottom: 20,
-    lineHeight: 22,
-  },
-  favButton: {
-    paddingVertical: 14,
-    borderRadius: 12,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  favActive: {
-    backgroundColor: COLORS.danger,
-  },
-  favInactive: {
-    backgroundColor: COLORS.primary,
-  },
-  favText: {
-    color: COLORS.white,
-    fontWeight: "bold",
-    fontSize: 16,
   },
 });

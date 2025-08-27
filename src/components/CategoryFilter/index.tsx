@@ -4,27 +4,22 @@ import {
   TouchableOpacity,
   View,
   useWindowDimensions,
-  Platform,
 } from "react-native";
 import { styles } from "./styles";
-
-type Props = {
-  categories: string[];
-  selectedCategory: string;
-  onSelect: (category: string) => void;
-};
+import { CategoryFilterProps } from "types/components/categoryFilter";
+import { globalStyles } from "@utils/globalStyles";
+import { DIMENSIONS } from "@utils/dimensions";
 
 export default function CategoryFilter({
   categories,
   selectedCategory,
   onSelect,
-}: Props) {
+}: CategoryFilterProps) {
   const { width } = useWindowDimensions();
-  const isWeb = Platform.OS === "web";
-  const buttonWidth = isWeb ? Math.min(150, width / 6) : 100;
+  const buttonWidth = DIMENSIONS.isWeb ? Math.min(150, width / 6) : 100;
 
   return (
-    <View style={[styles.container, isWeb && styles.webContainer]}>
+    <View style={[styles.container, DIMENSIONS.isWeb && styles.webContainer]}>
       {categories.map((cat) => (
         <TouchableOpacity
           testID={`category-${cat}`}
@@ -40,7 +35,7 @@ export default function CategoryFilter({
         >
           <Text
             style={[
-              styles.text,
+              globalStyles.title,
               selectedCategory === cat && styles.selectedText,
             ]}
           >

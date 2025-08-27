@@ -1,11 +1,13 @@
 import { COLORS } from "@utils/colors";
 import { StyleSheet } from "react-native";
+import { globalStyles } from "@utils/globalStyles";
+import { DIMENSIONS } from "@utils/dimensions";
 
 export const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    paddingHorizontal: 12,
-    paddingVertical: 10,
+    paddingHorizontal: DIMENSIONS.spacingM,
+    paddingVertical: DIMENSIONS.spacingS,
     overflow: "scroll",
     backgroundColor: COLORS.background,
   },
@@ -13,26 +15,22 @@ export const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "flex-start",
   },
+
   button: {
+    ...globalStyles.baseButton,
     backgroundColor: COLORS.lightGray,
-    borderRadius: 24,
-    margin: 4,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingVertical: 10,
-    paddingHorizontal: 12,
+    borderRadius: DIMENSIONS.radiusL,
+    margin: DIMENSIONS.spacingXS,
+    paddingVertical: DIMENSIONS.spacingXS,
+    paddingHorizontal: DIMENSIONS.spacingXS,
   },
+
   selected: {
     backgroundColor: COLORS.primary,
-  },
-  text: {
-    color: COLORS.black,
-    textAlign: "center",
-    fontWeight: "600",
-    fontSize: 16,
   },
   selectedText: {
     color: COLORS.white,
     fontWeight: "600",
+    fontSize: DIMENSIONS.fontM,
   },
 });

@@ -1,13 +1,13 @@
 import React from "react";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { RootStackParamList, TabsParamList } from "../types";
 import { COLORS } from "@utils/colors";
 import { linking } from "./deepLinking";
-import TabsNavigator from "./TabNav";
-import ProductDetails from "@screens/ProductDetails/ProductDetails";
+import TabsNavigator from "./bottomTab";
+import ProductDetails from "@screens/ProductDetails";
+import { RootStackList, Screens } from "types/navigation/rootStack";
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackList>();
 
 export default function Navigation() {
   return (
@@ -18,14 +18,14 @@ export default function Navigation() {
       }}
       linking={linking}
     >
-      <Stack.Navigator initialRouteName="Tabs">
+      <Stack.Navigator initialRouteName={Screens.Tabs}>
         <Stack.Screen
-          name="Tabs"
+          name={Screens.Tabs}
           component={TabsNavigator}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="ProductDetails"
+          name={Screens.ProductDetails}
           component={ProductDetails}
           options={{ title: "Product" }}
         />

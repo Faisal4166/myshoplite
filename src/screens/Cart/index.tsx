@@ -4,26 +4,27 @@ import {
   Text,
   FlatList,
   TouchableOpacity,
-  Platform,
   useWindowDimensions,
   Image,
 } from "react-native";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import {
   removeFromCart,
   updateQuantity,
   clearCart,
-} from "../../redux/slice/cartSlice";
+} from "@redux/slice/cartSlice";
 import { styles } from "./styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { COLORS } from "@utils/colors";
+import { globalStyles } from "@utils/globalStyles";
 
 export default function CartScreen() {
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector((s) => s.cart.items);
 
   const { width } = useWindowDimensions();
-  const numColumns = Platform.OS === "web" || width >= 768 ? 2 : 1;
+  const numColumns = width >= 768 ? 2 : 1;
+
 
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -41,9 +42,9 @@ export default function CartScreen() {
       <View style={styles.cardContent}>
         <View style={styles.itemInfo}>
           <View style={styles.row}>
-            <Text style={styles.name}>{item.name}</Text>
+            <Text style={globalStyles.title}>{item.name}</Text>
           </View>
-          <Text style={styles.price}>${item.price.toFixed(2)}</Text>
+          <Text style={globalStyles.price}>${item.price.toFixed(2)}</Text>
 
           <View style={styles.quantityContainer}>
             <TouchableOpacity
@@ -65,7 +66,10 @@ export default function CartScreen() {
             >
               <Text style={styles.qtyText}>+</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.remove} onPress={() => dispatch(removeFromCart(item.id))}>
+            <TouchableOpacity
+              style={styles.remove}
+              onPress={() => dispatch(removeFromCart(item.id))}
+            >
               <Ionicons name="trash" size={20} color={COLORS.danger} />
             </TouchableOpacity>
           </View>
@@ -89,12 +93,12 @@ export default function CartScreen() {
       ) : (
         <>
           <FlatList
+            key={numColumns}
+            numColumns={numColumns}
             data={cartItems}
             keyExtractor={(item) => item.id}
             renderItem={renderItem}
             contentContainerStyle={{ paddingBottom: 100 }}
-            numColumns={numColumns}
-            key={numColumns}
           />
           <View style={styles.footer}>
             <Text style={styles.total}>Total: ${total.toFixed(2)}</Text>
@@ -102,7 +106,12 @@ export default function CartScreen() {
               style={styles.clearButton}
               onPress={() => dispatch(clearCart())}
             >
-              <Ionicons style={styles.spaceRight} name="trash" size={20} color={COLORS.white} />
+              <Ionicons
+                style={styles.spaceRight}
+                name="trash"
+                size={20}
+                color={COLORS.white}
+              />
               <Text style={styles.clearText}>Clear Cart</Text>
             </TouchableOpacity>
           </View>

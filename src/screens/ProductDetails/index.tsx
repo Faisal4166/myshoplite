@@ -9,13 +9,15 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import { RootStackParamList, Product } from "@types";
+import { Product } from "types/screens/product";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { toggleFavorite } from "@redux/slice/favoritesSlice";
 import { fetchProductById } from "services/api";
 import { styles } from "./styles";
+import { RootStackParamList, Screens } from "types/navigation/rootStack";
+import { globalStyles } from "@utils/globalStyles";
 
-type Route = RouteProp<RootStackParamList, "ProductDetails">;
+type Route = RouteProp<RootStackParamList, Screens.ProductDetails>;
 
 export default function ProductDetails() {
   const route = useRoute<Route>();
@@ -24,7 +26,7 @@ export default function ProductDetails() {
   const favorites = useAppSelector((s) => s.favorites.ids);
 
   const [product, setProduct] = useState<Product | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const productId =
     typeof param === "object" && "id" in param
@@ -71,7 +73,7 @@ export default function ProductDetails() {
 
       <View style={styles.info}>
         <Text
-          style={styles.title}
+          style={globalStyles.title}
           accessible
           accessibilityLabel={`Product name: ${product.name}`}
         >
@@ -79,7 +81,7 @@ export default function ProductDetails() {
         </Text>
 
         <Text
-          style={styles.price}
+          style={globalStyles.price}
           accessible
           accessibilityLabel={`Product price: ${product.price}`}
         >
@@ -87,7 +89,7 @@ export default function ProductDetails() {
         </Text>
 
         <Text
-          style={styles.description}
+          style={globalStyles.description}
           accessible
           accessibilityLabel={`Product description: ${product.description}`}
         >
@@ -96,8 +98,8 @@ export default function ProductDetails() {
 
         <TouchableOpacity
           style={[
-            styles.favButton,
-            isFav ? styles.favActive : styles.favInactive,
+            globalStyles.favButton,
+            isFav ? globalStyles.favActive : globalStyles.favInactive,
           ]}
           onPress={() => dispatch(toggleFavorite(product.id))}
           accessible
@@ -105,7 +107,7 @@ export default function ProductDetails() {
             isFav ? "Remove from favorites" : "Add to favorites"
           }
         >
-          <Text style={styles.favText}>
+          <Text style={globalStyles.buttonText}>
             {isFav ? "♥ Remove from Favorites" : "♡ Add to Favorites"}
           </Text>
         </TouchableOpacity>

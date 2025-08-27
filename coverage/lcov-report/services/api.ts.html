@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -88,68 +88,56 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import axios from "axios";
-import { Product } from "../types";
-import { API_BASE } from "./config/url";
+import { API_BASE } from "services";
+import { Product } from "types/screens/product";
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >fetchProducts(</span>): Promise&lt;Product[]&gt; {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const res = <span class="cstat-no" title="statement not covered" >await axios.get&lt;Product[]&gt;(API_BASE);</span>
-<span class="cstat-no" title="statement not covered" >    return res.data;</span>
+export async function fetchProducts(): Promise&lt;Product[]&gt; {
+  try {
+    const res = await axios.get&lt;Product[]&gt;(API_BASE);
+    return res.data;
   } catch (error: any) {
-<span class="cstat-no" title="statement not covered" >    console.error("Error fetching products:", error.message || error);</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error("Failed to fetch products. Please try again.");</span>
+    console.error("Error fetching products:", error.message || <span class="branch-1 cbranch-no" title="branch not covered" >error)</span>;
+    throw new Error("Failed to fetch products. Please try again.");
   }
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >fetchProductById(</span>
+export async function fetchProductById(
   id: string
 ): Promise&lt;Product | undefined&gt; {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const products = <span class="cstat-no" title="statement not covered" >await fetchProducts();</span>
-<span class="cstat-no" title="statement not covered" >    return products.find(<span class="fstat-no" title="function not covered" >(p</span>) =&gt; <span class="cstat-no" title="statement not covered" >p.id.toString() === id.toString())</span>;</span>
+  try {
+    const products = await fetchProducts();
+    return products.find((p) =&gt; p.id.toString() === id.toString());
   } catch (error: any) {
-<span class="cstat-no" title="statement not covered" >    console.error("Error fetching product by ID:", error.message || error);</span>
-<span class="cstat-no" title="statement not covered" >    return undefined;</span>
+    console.error("Error fetching product by ID:", error.message || <span class="branch-1 cbranch-no" title="branch not covered" >error)</span>;
+    return undefined;
   }
 }
-export function <span class="fstat-no" title="function not covered" >BASE_URL(</span>BASE_URL: any) {
-<span class="cstat-no" title="statement not covered" >    throw new Error("Function not implemented.");</span>
-}
-&nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -157,7 +145,7 @@ export function <span class="fstat-no" title="function not covered" >BASE_URL(</
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-26T19:48:06.513Z
+                at 2025-08-27T21:47:41.917Z
             </div>
         <script src="../prettify.js"></script>
         <script>

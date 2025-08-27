@@ -1,6 +1,6 @@
 import axios from "axios";
-import { Product } from "../types";
-import { API_BASE } from "./config/url";
+import { API_BASE } from "services";
+import { Product } from "types/screens/product";
 
 export async function fetchProducts(): Promise<Product[]> {
   try {
@@ -23,7 +23,3 @@ export async function fetchProductById(
     return undefined;
   }
 }
-export function BASE_URL(BASE_URL: any) {
-    throw new Error("Function not implemented.");
-}
-

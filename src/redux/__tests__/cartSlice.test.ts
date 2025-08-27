@@ -4,7 +4,7 @@ import cartReducer, {
   updateQuantity,
   clearCart,
 } from "../slice/cartSlice";
-import { Product } from "@types";
+import { Product } from "@types/screens/product";
 
 describe("cartSlice", () => {
   const product: Product = {

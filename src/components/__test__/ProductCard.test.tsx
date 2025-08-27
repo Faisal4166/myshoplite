@@ -4,7 +4,7 @@ import { render, fireEvent } from "@testing-library/react-native";
 import { Provider } from "react-redux";
 import ProductCard from "../ProductCard";
 import { addToCart } from "@redux/slice/cartSlice";
-import { Product } from "@types";
+import { Product } from "types/screens/product";
 
 const mockStore = configureStore([]);
 

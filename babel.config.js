@@ -17,6 +17,7 @@ module.exports = function (api) {
             "@screens": "./src/screens",
             "@utils": "./src/utils",
             "@types": "./src/types",
+            "@types": "./src/types/bottomTabTypes.ts",
           },
         },
       ],

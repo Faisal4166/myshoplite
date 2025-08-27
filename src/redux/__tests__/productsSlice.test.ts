@@ -1,11 +1,11 @@
 
-import * as api from "../../services/api";
+import * as api from "services/api";
 import reducer, { fetchProducts, setProducts } from "../slice/productsSlice";
-import { Product } from "../../types";
+import { Product } from "../../types/screens/product";
 import { AnyAction } from "@reduxjs/toolkit";
 
 const mockedApi = api as jest.Mocked<typeof api>;
-jest.mock("../../services/api.ts");
+jest.mock("services/api");
 
 jest.mock("@env", () => ({
   BASE_URL: "https://mocki.io/v1/c53fb45e-5085-487a-afac-0295f62fb86e",

@@ -1,14 +1,21 @@
 import React, { useCallback, useMemo } from "react";
-import { View, FlatList, Text } from "react-native";
+import {
+  View,
+  FlatList,
+  Text,
+  useWindowDimensions,
+} from "react-native";
 import { useAppSelector } from "@redux/hooks";
-import ProductCard from "@components/ProductCard/ProductCard";
+import ProductCard from "@components/ProductCard";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackNavigationProp } from "types/navigation";
 import { styles } from "./styles";
+import { Screens } from "types/navigation/rootStack";
 
 export default function Favorites() {
   const navigation = useNavigation<RootStackNavigationProp>();
-
+  const { width } = useWindowDimensions();
+  const numColumns = width >= 768 ? 2 : 1;
   const favorites = useAppSelector((state) => state.favorites.ids);
   const products = useAppSelector((state) => state.products.items);
 
@@ -19,7 +26,7 @@ export default function Favorites() {
 
   const handlePress = useCallback(
     (id: string) => {
-      navigation.navigate("ProductDetails", { id });
+      navigation.navigate(Screens.ProductDetails, { id });
     },
     [navigation]
   );
@@ -41,6 +48,8 @@ export default function Favorites() {
   return (
     <View style={styles.container}>
       <FlatList
+        key={numColumns}
+        numColumns={numColumns}
         data={favoriteProducts}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (

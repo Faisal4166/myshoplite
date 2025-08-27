@@ -13,20 +13,21 @@ import {
 } from "react-native";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { fetchProducts } from "@redux/slice/productsSlice";
-import ProductCard from "@components/ProductCard/ProductCard";
+import ProductCard from "@components/ProductCard";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackNavigationProp } from "../../types/navigation";
 import { IMAGES } from "@utils/images";
-import CategoryFilter from "@components/CategoryFilter/CategoryFilter";
+import CategoryFilter from "@components/CategoryFilter";
 import { styles } from "./styles";
+import { Screens } from "types/navigation/rootStack";
 
 export default function ProductList() {
   const navigation = useNavigation<RootStackNavigationProp>();
   const dispatch = useAppDispatch();
   const { items, loading, error } = useAppSelector((s) => s.products);
-  const [search, setSearch] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [refreshing, setRefreshing] = useState(false);
+  const [search, setSearch] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [refreshing, setRefreshing] = useState<boolean>(false);
 
   const { width } = useWindowDimensions();
   const numColumns = width >= 768 ? 2 : 1;
@@ -47,12 +48,12 @@ export default function ProductList() {
     setRefreshing(true);
     await loadProducts();
     setRefreshing(false);
-    setSearch('');
+    setSearch("");
   };
 
   const handlePress = useCallback(
     (id: string) => {
-      navigation.navigate("ProductDetails", { id });
+      navigation.navigate(Screens.ProductDetails, { id });
     },
     [navigation]
   );
